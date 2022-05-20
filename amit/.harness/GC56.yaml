@@ -1,0 +1,24 @@
+connector:
+  name: GC56
+  identifier: GC56
+  description:
+  orgIdentifier: default
+  projectIdentifier: apiCallCheck
+  type: Github
+  spec:
+    url: https://github.com/wings-software/ng_2_dx/
+    authentication:
+      type: Http
+      spec:
+        type: UsernameToken
+        spec:
+          username: harness
+          tokenRef: account.harnessRepoSecret
+    apiAccess:
+      type: Token
+      spec:
+        tokenRef: account.harnessRepoSecret
+    delegateSelectors:
+    - amit-playground
+    executeOnDelegate: true
+    type: Repo
